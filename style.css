@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.main-header {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(121, 64, 245);
+    overflow: hidden;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 6px;
+}
+
+.header-logo {
+    width: calc(100% - 70%);
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 60%);
+    height: 80px;
+}
+
+.main-nav li {
+    line-height: 80px;
+    padding: 0 10px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.main-nav ul li:hover {
+    background-color: rgb(93, 21, 250);
+}
+
+
+
+.nav-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-menu .line {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+    }
+
+    .main-nav ul {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 300px;
+        text-align: center;
+        display: block;
+        height: 0px;
+        background-color: rgb(121, 64, 245);
+        transition: 0.2s;
+    }
+
+    .main-nav ul.active {
+        height: calc(100vh - 80px);
+    }
+
+    .main-nav ul li {
+        opacity: 0;
+        transition: 0.2s;
+
+    }
+
+    .main-nav ul.active li {
+        opacity: 1;
+        padding: 5px 0;
+        width: 100%;
+        height: 50px;
+        line-height: 45px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+
+    .main-nav ul.active li:last-of-type {
+        border-bottom: none;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 576px) {
+    .main-nav ul {
+        width: 100%;
+    }
+
+    .main-header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+}
